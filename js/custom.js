@@ -98,9 +98,9 @@ jQuery(function () {
 			});    
     
             var myOptions = {
-				zoom: 16,
+				zoom: 17,
 				scrollwheel: false,
-				center: new google.maps.LatLng(53.385873, -1.471471),
+				center: new google.maps.LatLng(40.83255, -96.69188),
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				styles: [
 							{
@@ -200,7 +200,7 @@ jQuery(function () {
 				
 			
 			$(function() {
-				var endDate = "December 7, 2014 15:03:25";
+				var endDate = "March 20, 2015 17:00:00";
 
 				$('.countdown.styled').countdown({
 				  date: endDate,

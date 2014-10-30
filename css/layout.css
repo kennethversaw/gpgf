@@ -318,7 +318,7 @@ Point : One Page Event and Conference HTML Template
 5. Price Table */
 
 .pricing_table{
-	background:url("../images/price_table_bg.jpg") fixed;
+	background:url("../images/GPGF2014/gpgf-811.jpg") fixed;
 }
 .overlay{
 	padding-top:100px;
@@ -739,6 +739,9 @@ a.advance-link{
 	-webkit-transition:all 0.5s ease;
 	-moz-transition:all 0.5s ease;
 	transition:all 0.5s ease;
+}
+.floatleft{
+    float:left;
 }
 .sidebar_content li{
     position: relative;
