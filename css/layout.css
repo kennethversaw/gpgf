@@ -112,7 +112,7 @@ Point : One Page Event and Conference HTML Template
 3. Sldier */
 
 .slider{
-	background:url(../images/LotsOfGames.jpg) fixed;
+	background:url(../images/GPGF2014/Background/LotsOfGames.jpg) fixed;
 	padding: 0px;
 	background-size:cover;
 }
@@ -210,7 +210,7 @@ Point : One Page Event and Conference HTML Template
 }
 
 .newsleter {
-	background:url(../images/GPGF2014/gpgf-612.jpg) fixed;
+	background:url(../images/GPGF2014/background/gpgf-612.jpg) fixed;
 }
 .newsleter .overlay{
 	padding-bottom:100px;
@@ -318,7 +318,7 @@ Point : One Page Event and Conference HTML Template
 5. Price Table */
 
 .pricing_table{
-	background:url("../images/GPGF2014/gpgf-811.jpg") fixed;
+	background:url("../images/GPGF2014/background/gpgf-81.jpg") fixed;
 }
 .overlay{
 	padding-top:100px;
