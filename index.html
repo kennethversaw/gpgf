@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="js">
+<html lang="en" class="js" ng-app="GPGF">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,35 @@
     <![endif]-->
 </head>
 <body>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Great Plains Game Festival Registration</h3>
+        </div>
+        <div class="modal-body">
+            <br />
+       <label>First Name:</label>
+                        <input type="text" ng-model="newRegistration.FirstName">
+            <br />
+            <label>Last Name:</label>
+                        <input type="text" ng-model="newRegistration.LastName">
+            <br />
+
+            <label>Email:</label>
+                        <input type="text" ng-model="newRegistration.Email">
+            <br />
+          
+        </div>
+        <div class="modal-footer">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="7KV24TVQV6UNQ">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+        </div>
+    </script>
+
     <div id="preloader"></div>
     <div class="left_bar text-center">
         <div id="slides">
@@ -96,7 +125,10 @@
         </header>
     </div>
 
-    <div class="right_content">
+    <div class="right_content" ng-controller="registrationCtrl">
+        <form ng-submit="register()">
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
         <div class="container-fluid no-padding">
             <section>
                 <div class="row" id="home">
@@ -562,10 +594,10 @@
                             <h1 class="double"><span>THE</span> Events</h1>
                             <p class="simple">
                                 We are currently looking for passionate people who love sharing their games.
-                                
+
                                 <div><a href="mailto:greatplainsgamefestival@gmail.com" class="btn-su floatleft">Run An Event</a></div><br /><br /><hr class="divder" />
                             </p>
-                           
+
 
                         </div>
                     </div>
@@ -583,9 +615,9 @@
                                 <!-- PRICING-TABLE CONTAINER -->
                                 <div class="pricing-table group">
                                     <!-- PERSONAL -->
-                                   <div class="col-md-4 block personal fl">
-                                       <!--  <h2 class="title">Basic</h2>
-                                     
+                                    <div class="col-md-4 block personal fl">
+                                        <!--  <h2 class="title">Basic</h2>
+
                                         <div class="content">
                                             <p class="price">
 
@@ -594,18 +626,18 @@
                                             </p>
                                             <p class="hint">Perfect for freelancers</p>
                                         </div>
-                                     
+
                                         <ul class="features">
                                             <li>All Access</li>
                                             <li>Free Coffee</li>
                                             <li>Free Lunch</li>
                                             <li>Seminar Video Disk</li>
                                         </ul>
-                                   
+
                                         <div class="pt-footer">
                                             <p><a href="#">Singup</a></p>
                                         </div>-->
-                                       
+
                                     </div>
                                     <!-- /PERSONAL -->
                                     <!-- PROFESSIONAL -->
@@ -623,9 +655,9 @@
                                         <!-- /CONTENT -->
                                         <!-- FEATURES -->
                                         <ul class="features">
-                                            <li>Full access to boardgame library</li>            
-                                            <li>Full access to Play-To-Win and other giveaways</li>                                
-                                            <li>Play games with 140+ of your closest friends</li>                                            
+                                            <li>Full access to boardgame library</li>
+                                            <li>Full access to Play-To-Win and other giveaways</li>
+                                            <li>Play games with 140+ of your closest friends</li>
                                             <li>More fun then should be allowed in a weekend</li>
                                         </ul>
                                         <!-- /FEATURES -->
@@ -639,8 +671,8 @@
                                     <!-- /PROFESSIONAL -->
                                     <!-- BUSINESS -->
                                     <div class="col-md-4 block business fl">
-                                      <!--  <h2 class="title">Business</h2>
-                                     
+                                        <!--  <h2 class="title">Business</h2>
+
                                         <div class="content">
                                             <p class="price">
                                                 <sup>$</sup>
@@ -649,18 +681,18 @@
                                             </p>
                                             <p class="hint">For established business</p>
                                         </div>
-                                
+
                                         <ul class="features">
                                             <li>All Access</li>
                                             <li>Free Coffee</li>
                                             <li>Free Lunch</li>
                                             <li>Seminar Video Disk</li>
                                         </ul>
-                                  
+
                                         <div class="pt-footer">
                                             <p><a href="#">Singup</a></p>
                                         </div>-->
-                                      
+
                                     </div>
                                     <!-- /BUSINESS -->
                                 </div>
@@ -746,89 +778,89 @@
             </section>
 
 
-      <!--    <section>
-                <div id="spek_action" class="row spek_action parallax text-center">
-                    <div class="overlay">
-                        <div class="col-md-12">
-                            <h3 class="double">wann To Meat Our Speakers</h3>
-                            <a class="btn-sq btn-spek" href="#speakers">Hit Me</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <!--    <section>
+                  <div id="spek_action" class="row spek_action parallax text-center">
+                      <div class="overlay">
+                          <div class="col-md-12">
+                              <h3 class="double">wann To Meat Our Speakers</h3>
+                              <a class="btn-sq btn-spek" href="#speakers">Hit Me</a>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
 
-            <section>
-                <div class="row partners" id="partners">
-                    <div class="col-md-7 middle text-center">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-7.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-8.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-6.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-5.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-4.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-3.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-2.png" alt="img" />
-                                </div>
-                            </div>
-                            <div class="col-md-6  col-sm-6">
-                                <div class="single_partner">
-                                    <img src="images/partner-1.png" alt="img" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 no-padding">
-                        <div class="sidebar_content">
-                            <h1 class="double"><span>THE</span> PARTNERS</h1>
-                            <h3 class="double">Lorem ipsum dolor sit amet</h3>
-                            <p class="simple">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pelntesque eu, pretium quis, sem. Nulla consequat massa quis enim.aliquet nec, vulputate eget arcu.
-                            </p>
-                            <hr class="divder" />
+              <section>
+                  <div class="row partners" id="partners">
+                      <div class="col-md-7 middle text-center">
+                          <div class="row">
+                              <div class="col-md-6 col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-7.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-8.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-6.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-5.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-4.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-3.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-2.png" alt="img" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6  col-sm-6">
+                                  <div class="single_partner">
+                                      <img src="images/partner-1.png" alt="img" />
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-5 no-padding">
+                          <div class="sidebar_content">
+                              <h1 class="double"><span>THE</span> PARTNERS</h1>
+                              <h3 class="double">Lorem ipsum dolor sit amet</h3>
+                              <p class="simple">
+                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pelntesque eu, pretium quis, sem. Nulla consequat massa quis enim.aliquet nec, vulputate eget arcu.
+                              </p>
+                              <hr class="divder" />
 
 
-                        </div>
-                    </div>
-                </div>
-            </section>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-            <section>
-                <div id="be_partners" class="row be_partners parallax text-center">
-                    <div class="overlay">
-                        <div class="col-md-12">
-                            <h3 class="double">Ready to be a Partner?</h3>
-                            <a href="#" class="btn-sq">Become A Partner</a>
-                        </div>
-                    </div>
-                </div>
-            </section>-->  
+              <section>
+                  <div id="be_partners" class="row be_partners parallax text-center">
+                      <div class="overlay">
+                          <div class="col-md-12">
+                              <h3 class="double">Ready to be a Partner?</h3>
+                              <a href="#" class="btn-sq">Become A Partner</a>
+                          </div>
+                      </div>
+                  </div>
+              </section>-->
 
             <section>
                 <div class="row location" id="location">
@@ -848,7 +880,7 @@
                         </div>
                         <div class="sidebar_content text-center">
                             <div class="row">
-                               <!-- <div class="col-sm-12">
+                                <!-- <div class="col-sm-12">
                                     <i class="fa fa-bullhorn"></i>
                                     <p class="simple">DO IT YOURSELF PR CLASS</p>
                                     <hr class="divder-sm" />
@@ -874,7 +906,7 @@
                 </div>
             </section>
 
-          <!-- <section>
+            <!-- <section>
                 <div id="contact_action" class="row contact_action parallax text-center">
                     <div class="overlay">
                         <div class="col-md-12">
@@ -882,14 +914,14 @@
                         </div>
                     </div>
                 </div>
-            </section>--> 
+            </section>-->
 
             <section>
                 <div class="row contact" id="contact">
                     <div class="col-md-7 middle">
                         <h4 class="double">Any question? Drop us a note.</h4>
                         <div><a href="mailto:greatplainsgamefestival@gmail.com" class="btn-su floatleft">Contact Us</a></div><br /><br />
-                     <!--   <form class="contact_form" action="index.html">
+                        <!--   <form class="contact_form" action="index.html">
                             <input type="text" placeholder="Name" />
                             <input type="text" placeholder="Email" />
                             <input type="text" placeholder="Phone" />
@@ -897,7 +929,7 @@
                             <input type="submit" class="btn-su" value="Submit" />
                         </form>-->
                     </div>
-                   <!--<div class="col-md-5 no-padding">
+                    <!--<div class="col-md-5 no-padding">
                         <div class="sidebar_content">
                             <h1 class="double"><span>THE</span> CONTACT</h1>
                             <p class="simple">
@@ -925,7 +957,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>--> 
+                    </div>-->
                 </div>
             </section>
 
@@ -967,5 +999,15 @@
     <script src="lib/jQuery-One-Page-Nav/jquery.nav.js"></script>
 
     <script src="js/custom.js" type="text/javascript"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="controllers/registrationCtrl.js"></script>
+
 </body>
 </html>
