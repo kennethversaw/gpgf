@@ -12,4 +12,22 @@ Primary use:	Event
 @import "font.css";
 @import "color.css";
 
+  .css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+      font-weight:bolder;
+    font-size:large;
+    color:black;
+  }
+
+  .css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+    font-weight:bolder;
+    font-size:large;
+    color:black;
+  }
+  .css-form input.ng-pristine{
+      border:solid;
+      border-width: 2px;
+      border-color: red; 
+  }
 /* @import "debugging.css"; */

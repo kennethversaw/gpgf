@@ -634,7 +634,7 @@
                                 <div class="pricing-table group">
                                     <!-- DAY BADGE -->
                                     <div class="col-md-4 block personal fl">
-                                          <h2 class="title">Day Badge</h2>
+                                        <h2 class="title">Day Badge</h2>
 
                                         <div class="content">
                                             <p class="price">
@@ -653,8 +653,8 @@
                                             <li></li>
                                             <li></li>
                                         </ul>
-                                        <div class="pt-footer">                                            
-                                            <p>Only available at event</p>                                           
+                                        <div class="pt-footer">
+                                            <p>Only available at event</p>
                                         </div>
 
                                     </div>
@@ -669,32 +669,56 @@
                                                 <span>25</span>
 
                                             </p>
-                                            <p class="hint">All weekend long</p>
+                                            <p class="hint">Registration Form</p>
                                         </div>
                                         <!-- /CONTENT -->
                                         <!-- FEATURES -->
+                                        <!--<ul class="features">
+                                            <li> First Name: &nbsp;&nbsp;<input type="text" ng-model="newRegistration.FirstName" required> </li>
+                                            <li>Last Name: &nbsp;&nbsp;<input type="text" ng-model="newRegistration.LastName" required> </li>
+                                            <li>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" ng-model="newRegistration.Email" required> </li>
+                                        </ul>-->
+                                        
+                                        <ul class="features">
+                                            <li>
+                                                
+                                                <form name="form" class="css-form" novalidate>
+                                                    First Name:
+                                                    <input type="text" ng-model="newRegistration.FirstName" name="ufirstName" required /><br />
+                                                    
+                                                    Last Name:
+                                                    <input type="text" ng-model="newRegistration.LastName" name="ulastName" required /><br />
+                                                    E-mail:
+                                                    <input type="email" ng-model="newRegistration.email" name="uEmail" required /><br />
+                                                    <div ng-show="form.uEmail.$dirty && form.uEmail.$invalid">
+                                                        Invalid:
+                                                        <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+                                                        <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+                                                    </div>
+                                                    <!--<input type="checkbox" ng-model="user.agree" name="userAgree" required />
+                                                    I agree: <input ng-show="user.agree" type="text" ng-model="user.agreeSign"
+                                                                    required /><br />
+                                                    <div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div>-->                                                  
+                                                </form>
 
-
-                                        <ul class="features">                                        
-                                            <li> First Name: &nbsp;&nbsp;<input type="text" ng-model="newRegistration.FirstName"> </li>
-                                            <li>Last Name: &nbsp;&nbsp;<input type="text" ng-model="newRegistration.LastName"> </li>
-                                            <li>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="newRegistration.Email"> </li>
-                                        </ul>                        
-
+                                            </li>
+                                        </ul>
                                         <div class="pt-footer">
                                             <br />
                                             <br />
-                                            <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-click="register()">
                                                 <input type="hidden" name="cmd" value="_s-xclick">
                                                 <input type="hidden" name="hosted_button_id" value="2WRXLNVX3ZFRQ">
                                                 <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </form>-->
                                             <!--<p><a href="#">Singup</a></p>-->
+
+
                                             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-click="register()">
                                                 <input type="hidden" name="cmd" value="_s-xclick">
                                                 <input type="hidden" name="hosted_button_id" value="7KV24TVQV6UNQ">
-                                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                <input ng-hide="form.$invalid" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
                                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </form>
 
@@ -704,7 +728,7 @@
                                     <!-- /EARLY BIRD -->
                                     <!-- WEEKEND PASS -->
                                     <div class="col-md-4 block business fl">
-                                          <h2 class="title">Weekend Badge</h2>
+                                        <h2 class="title">Weekend Badge</h2>
 
                                         <div class="content">
                                             <p class="price">
@@ -724,7 +748,7 @@
                                         </ul>
 
                                         <div class="pt-footer">
-                                            <p>Only available at event</p> 
+                                            <p>Only available at event</p>
                                         </div>
 
                                     </div>
