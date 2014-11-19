@@ -521,7 +521,7 @@ Point : One Page Event and Conference HTML Template
     line-height: 1;
 }
 .features li{
-    padding:15px 0;
+    padding:5px 0;
     width: 100%;
 }
 .features li span{
@@ -532,6 +532,7 @@ Point : One Page Event and Conference HTML Template
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
     text-transform: capitalize;
+    padding: 20px;
 }
 
 .pt-footer p a:hover{
@@ -879,7 +880,9 @@ a.advance-link{
     .navigation_me{
         height: auto;
     }
-  
+  .registrationTable {
+      border: 1px solid green;     
+  }
 }
 
 
