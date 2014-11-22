@@ -205,7 +205,7 @@ jQuery(function () {
 				$('.countdown.styled').countdown({
 				  date: endDate,
 				  render: function(data) {
-					$(this.el).html("<div><div><div>" + "<h2>" + this.leadingZeros(data.days, 3) + "</h2>" + " <span>Days</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.hours, 2) + "</h2>" + " <span>Hours</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.min, 2) + "</h2>" + " <span>Minuts</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.sec, 2) + "</h2>" + " <span>Seconds</span></div></div></div>");
+					$(this.el).html("<div><div><div>" + "<h2>" + this.leadingZeros(data.days, 3) + "</h2>" + " <span>Days</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.hours, 2) + "</h2>" + " <span>Hours</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.min, 2) + "</h2>" + " <span>Minutes</span></div></div></div><div><div><div>" + "<h2>" + this.leadingZeros(data.sec, 2) + "</h2>" + " <span>Seconds</span></div></div></div>");
 				  }
 				});
 			  });

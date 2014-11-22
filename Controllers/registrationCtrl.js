@@ -1,11 +1,19 @@
 ﻿myApp.controller('registrationCtrl', function ($scope, Registration, $modal, $log) {
-
+    $scope.imageOpacity = .3;
+    
     $scope.newRegistration = new Registration();
     // $scope.items = ['item1', 'item2', 'item3'];
     $scope.showProgress = false;
     $scope.register = function () {
         $scope.newRegistration.$save();
     }
+    $scope.$watch('form.$valid', function (newVal) {
+        if (newVal) {
+            $scope.imageOpacity = 1;
+        } else {
+            $scope.imageOpacity = .3;
+        }
+    });
         //$scope.newRegistration.$save(function() {
            
         //});

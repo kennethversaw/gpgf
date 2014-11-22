@@ -28,6 +28,19 @@ Primary use:	Event
   .css-form input.ng-pristine{
       border:solid;
       border-width: 2px;
-      border-color: red; 
+      border-color:  #53CFE9; 
   }
+
+ .darken{
+     opacity: .3;
+ }
+ .lighten{
+     opacity: 1;
+ }
+    /*form.ng-valid payPalForm.imageButton {
+  opacity: 1;  
+}
+  .css-form.ng-invalid payPalForm.imageButton {
+  opacity: .3;
+}*/
 /* @import "debugging.css"; */
