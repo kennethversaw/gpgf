@@ -200,7 +200,7 @@ jQuery(function () {
 				
 			
 			$(function() {
-				var endDate = "March 20, 2015 17:00:00";
+				var endDate = "February 26, 2016 17:00:00";
 
 				$('.countdown.styled').countdown({
 				  date: endDate,
