@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58D5CC29-CF11-4D24-90AB-4F981CD413EE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPGF</RootNamespace>
+    <AssemblyName>GPGF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <ApplicationInsightsResourceId>/subscriptions/74367bdd-277b-4e2e-99f6-7ca404af6d30/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/GPGF</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.Web.1.2.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.ApplicationInsights.1.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\..\..\..\..\Users\Ken\Documents\Visual Studio 2013\Projects\localhost_49337\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="images\add.jpg" />
+    <Content Include="images\be_partner_bg.jpg" />
+    <Content Include="images\bgPattern\bgPattern.png" />
+    <Content Include="images\bgPattern\header_pattern.png" />
+    <Content Include="images\bgPattern\overlay-pattern.png" />
+    <Content Include="images\call_bg.jpg" />
+    <Content Include="images\co-1.jpg" />
+    <Content Include="images\gallery\gallery-large.jpg" />
+    <Content Include="images\gallery\gallery-large1.jpg" />
+    <Content Include="images\gallery\gallery-large2.jpg" />
+    <Content Include="images\gallery\gallery-large3.jpg" />
+    <Content Include="images\gallery\gallery-large4.jpg" />
+    <Content Include="images\gallery\gallery-large5.jpg" />
+    <Content Include="images\gallery\gallery-small.jpg" />
+    <Content Include="images\gallery\gallery-small1.jpg" />
+    <Content Include="images\gallery\gallery-small2.jpg" />
+    <Content Include="images\gallery\gallery-small3.jpg" />
+    <Content Include="images\gallery\gallery-small4.jpg" />
+    <Content Include="images\gallery\gallery-small5.jpg" />
+    <Content Include="images\GPGF2014\Background\gpgf-57.jpg" />
+    <Content Include="images\GPGF2014\Background\gpgf-612.jpg" />
+    <Content Include="images\GPGF2014\Background\gpgf-81.jpg" />
+    <Content Include="images\GPGF2014\Background\LotsOfGames.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-1.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-14.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-20.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-32.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-4.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-41.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-43.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-55.jpg" />
+    <Content Include="images\GPGF2014\Large\gpgf-75.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-1.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-14.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-20.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-32.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-4.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-41.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-43.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-55.jpg" />
+    <Content Include="images\GPGF2014\Thumbs\gpgf-75.jpg" />
+    <Content Include="images\GPGFLogo.png" />
+    <Content Include="images\home_bg.jpg" />
+    <Content Include="images\ico\favicon.ico" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo_big.png" />
+    <Content Include="images\ms-1.jpg" />
+    <Content Include="images\ms-2.jpg" />
+    <Content Include="images\ms-3.jpg" />
+    <Content Include="images\newslater_bg.jpg" />
+    <Content Include="images\preloader.gif" />
+    <Content Include="images\price_table_bg.jpg" />
+    <Content Include="images\pur_bg.jpg" />
+    <Content Include="images\Sidebar1.png" />
+    <Content Include="images\Sidebar2.png" />
+    <Content Include="images\Sidebar3.png" />
+    <Content Include="images\speaker\1.jpg" />
+    <Content Include="images\speaker\10.jpg" />
+    <Content Include="images\speaker\11.jpg" />
+    <Content Include="images\speaker\12.jpg" />
+    <Content Include="images\speaker\13.jpg" />
+    <Content Include="images\speaker\14.jpg" />
+    <Content Include="images\speaker\2.jpg" />
+    <Content Include="images\speaker\3.jpg" />
+    <Content Include="images\speaker\4.jpg" />
+    <Content Include="images\speaker\5.jpg" />
+    <Content Include="images\speaker\6.jpg" />
+    <Content Include="images\speaker\7.jpg" />
+    <Content Include="images\speaker\8.jpg" />
+    <Content Include="images\speaker\9.jpg" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="lib\flat-pricing-table\css\style.css" />
+    <Content Include="lib\flat-pricing-table\index.html" />
+    <Content Include="lib\flat-pricing-table\license.txt" />
+    <Content Include="lib\flat-pricing-table\README.txt" />
+    <Content Include="lib\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="lib\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\galleriffic-2.0\css\basic.css" />
+    <Content Include="lib\galleriffic-2.0\css\black.css" />
+    <Content Include="lib\galleriffic-2.0\css\caption.png" />
+    <Content Include="lib\galleriffic-2.0\css\galleriffic-1.css" />
+    <Content Include="lib\galleriffic-2.0\css\galleriffic-2.css" />
+    <Content Include="lib\galleriffic-2.0\css\galleriffic-3.css" />
+    <Content Include="lib\galleriffic-2.0\css\galleriffic-4.css" />
+    <Content Include="lib\galleriffic-2.0\css\galleriffic-5.css" />
+    <Content Include="lib\galleriffic-2.0\css\jush.css" />
+    <Content Include="lib\galleriffic-2.0\css\loader.gif" />
+    <Content Include="lib\galleriffic-2.0\css\loaderWhite.gif" />
+    <Content Include="lib\galleriffic-2.0\css\nextPageArrow.gif" />
+    <Content Include="lib\galleriffic-2.0\css\nextPageArrowWhite.gif" />
+    <Content Include="lib\galleriffic-2.0\css\prevPageArrow.gif" />
+    <Content Include="lib\galleriffic-2.0\css\prevPageArrowWhite.gif" />
+    <Content Include="lib\galleriffic-2.0\css\white.css" />
+    <Content Include="lib\galleriffic-2.0\example-1.html" />
+    <Content Include="lib\galleriffic-2.0\example-2.html" />
+    <Content Include="lib\galleriffic-2.0\example-3.html" />
+    <Content Include="lib\galleriffic-2.0\example-4.html" />
+    <Content Include="lib\galleriffic-2.0\example-5.html" />
+    <Content Include="lib\galleriffic-2.0\index.html" />
+    <Content Include="lib\galleriffic-2.0\js\jquery-1.3.2.js" />
+    <Content Include="lib\galleriffic-2.0\js\jquery.galleriffic.js" />
+    <Content Include="lib\galleriffic-2.0\js\jquery.history.js" />
+    <Content Include="lib\galleriffic-2.0\js\jquery.opacityrollover.js" />
+    <Content Include="lib\galleriffic-2.0\js\jush.js" />
+    <Content Include="lib\jQuery-One-Page-Nav\filter.htm" />
+    <Content Include="lib\jQuery-One-Page-Nav\hash.htm" />
+    <Content Include="lib\jQuery-One-Page-Nav\index.htm" />
+    <Content Include="lib\jQuery-One-Page-Nav\jquery.js" />
+    <Content Include="lib\jQuery-One-Page-Nav\jquery.nav.js" />
+    <Content Include="lib\jQuery-One-Page-Nav\jquery.scrollTo.js" />
+    <Content Include="lib\jQuery-One-Page-Nav\multiple.htm" />
+    <Content Include="lib\jQuery-One-Page-Nav\non-existing.htm" />
+    <Content Include="lib\jQuery-One-Page-Nav\top.htm" />
+    <Content Include="lib\jquery-parallax\images\dot.png" />
+    <Content Include="lib\jquery-parallax\images\firstBG.jpg" />
+    <Content Include="lib\jquery-parallax\images\secondBG.jpg" />
+    <Content Include="lib\jquery-parallax\images\thirdBG.jpg" />
+    <Content Include="lib\jquery-parallax\images\trainers.png" />
+    <Content Include="lib\jquery-parallax\index.html" />
+    <Content Include="lib\jquery-parallax\scripts\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="lib\jquery-parallax\scripts\jquery.parallax-1.1.3.js" />
+    <Content Include="lib\jquery-parallax\scripts\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="lib\jquery-parallax\style.css" />
+    <Content Include="lib\jquery.bxslider\images\bx_loader.gif" />
+    <Content Include="lib\jquery.bxslider\images\controls.png" />
+    <Content Include="lib\jquery.bxslider\jquery.bxslider.css" />
+    <Content Include="lib\jquery.bxslider\jquery.bxslider.js" />
+    <Content Include="lib\jquery.bxslider\jquery.bxslider.min.js" />
+    <Content Include="lib\jquery.bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="lib\jquery.bxslider\plugins\jquery.fitvids.js" />
+    <Content Include="lib\rendro-countdown\examples\index.html" />
+    <Content Include="lib\rendro-countdown\examples\style.css" />
+    <Content Include="lib\rendro-countdown\jquery.countdown.js" />
+    <Content Include="lib\superslides\dist\jquery.superslides.js" />
+    <Content Include="lib\superslides\dist\jquery.superslides.min.js" />
+    <Content Include="lib\superslides\dist\stylesheets\superslides.css" />
+    <Content Include="lib\superslides\examples\constrained.html" />
+    <Content Include="lib\superslides\examples\custom-fx.html" />
+    <Content Include="lib\superslides\examples\custom-pagination.html" />
+    <Content Include="lib\superslides\examples\fade.html" />
+    <Content Include="lib\superslides\examples\images\affinity.jpeg" />
+    <Content Include="lib\superslides\examples\images\cinelli-front.jpeg" />
+    <Content Include="lib\superslides\examples\images\cinelli.jpeg" />
+    <Content Include="lib\superslides\examples\images\home-banner-01.jpg" />
+    <Content Include="lib\superslides\examples\images\people.jpeg" />
+    <Content Include="lib\superslides\examples\images\surly.jpeg" />
+    <Content Include="lib\superslides\examples\index.html" />
+    <Content Include="lib\superslides\examples\javascripts\application.js" />
+    <Content Include="lib\superslides\examples\javascripts\hammer.min.js" />
+    <Content Include="lib\superslides\examples\javascripts\jquery.animate-enhanced.min.js" />
+    <Content Include="lib\superslides\examples\javascripts\jquery.easing.1.3.js" />
+    <Content Include="lib\superslides\examples\multiple.html" />
+    <Content Include="lib\superslides\examples\play.html" />
+    <Content Include="lib\superslides\examples\preserved-images.html" />
+    <Content Include="lib\superslides\examples\simple.html" />
+    <Content Include="lib\superslides\examples\single.html" />
+    <Content Include="lib\superslides\examples\touch.html" />
+    <Content Include="lib\superslides\Gruntfile.js" />
+    <Content Include="lib\superslides\libs\jquery-loader.js" />
+    <Content Include="lib\superslides\libs\jquery\jquery.js" />
+    <Content Include="lib\superslides\libs\qunit\qunit.css" />
+    <Content Include="lib\superslides\libs\qunit\qunit.js" />
+    <Content Include="lib\superslides\src\core.js" />
+    <Content Include="lib\superslides\src\core_outro.js" />
+    <Content Include="lib\superslides\src\core_prototype.js" />
+    <Content Include="lib\superslides\src\css.js" />
+    <Content Include="lib\superslides\src\fx.js" />
+    <Content Include="lib\superslides\src\image.js" />
+    <Content Include="lib\superslides\src\intro.js" />
+    <Content Include="lib\superslides\src\outro.js" />
+    <Content Include="lib\superslides\src\pagination.js" />
+    <Content Include="lib\superslides\src\plugin.js" />
+    <Content Include="lib\superslides\src\setup.js" />
+    <Content Include="lib\superslides\test\superslides.html" />
+    <Content Include="lib\superslides\test\superslides_test.js" />
+    <Content Include="Scripts\Controllers\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Controllers\ai.0.15.0-build46802.js" />
+    <Content Include="Scripts\Controllers\ai.0.15.0-build46802.min.js" />
+    <Content Include="Scripts\Controllers\bootstrap.js" />
+    <Content Include="Scripts\Controllers\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\.DS_Store" />
+    <Content Include="images\ico\.DS_Store" />
+    <Content Include="images\logo.psd" />
+    <Content Include="images\logo_big.psd" />
+    <Content Include="images\speaker\.DS_Store" />
+    <Content Include="assets\.DS_Store" />
+    <Content Include="assets\css\bootstrap-theme.css.map" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\.DS_Store" />
+    <Content Include="lib\font-awesome-4.1.0\.DS_Store" />
+    <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <Content Include="lib\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\core.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\fixed-width.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\font-awesome.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\icons.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\larger.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\list.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\mixins.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\path.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\spinning.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\stacked.less" />
+    <Content Include="lib\font-awesome-4.1.0\less\variables.less" />
+    <Content Include="lib\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_core.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_icons.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_larger.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_list.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_mixins.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_path.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_spinning.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_stacked.scss" />
+    <Content Include="lib\font-awesome-4.1.0\scss\_variables.scss" />
+    <Content Include="lib\jQuery-One-Page-Nav\component.json" />
+    <Content Include="lib\jQuery-One-Page-Nav\README.markdown" />
+    <Content Include="lib\jquery-parallax\.DS_Store" />
+    <Content Include="lib\jquery-parallax\README.markdown" />
+    <Content Include="lib\jquery.bxslider\bower.json" />
+    <Content Include="lib\jquery.bxslider\readme.md" />
+    <Content Include="lib\rendro-countdown\.DS_Store" />
+    <Content Include="lib\rendro-countdown\coffee\jquery.countdown.coffee" />
+    <Content Include="lib\rendro-countdown\Makefile" />
+    <Content Include="lib\rendro-countdown\Readme.md" />
+    <Content Include="lib\superslides\.DS_Store" />
+    <Content Include="lib\superslides\.gitignore" />
+    <Content Include="lib\superslides\.jshintrc" />
+    <Content Include="lib\superslides\changelog.md" />
+    <Content Include="lib\superslides\CONTRIBUTING.md" />
+    <Content Include="lib\superslides\LICENSE-MIT" />
+    <Content Include="lib\superslides\package.json" />
+    <Content Include="lib\superslides\README.md" />
+    <Content Include="lib\superslides\scss\superslides.scss" />
+    <Content Include="lib\superslides\src\.jshintrc" />
+    <Content Include="lib\superslides\superslides.jquery.json" />
+    <Content Include="lib\superslides\test\.jshintrc" />
+    <Content Include="js\.DS_Store" />
+    <None Include="Scripts\Controllers\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Controllers\jquery-1.10.2.js" />
+    <Content Include="Scripts\Controllers\jquery-1.10.2.min.js" />
+    <None Include="Scripts\Controllers\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Controllers\jquery.validate.js" />
+    <Content Include="Scripts\Controllers\jquery.validate.min.js" />
+    <Content Include="Scripts\Controllers\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Controllers\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Controllers\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Controllers\respond.js" />
+    <Content Include="Scripts\Controllers\respond.min.js" />
+    <Content Include="Scripts\Controllers\_references.js" />
+    <Content Include="Scripts\Controllers\js\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Controllers\assets\css\bootstrap-theme.css" />
+    <Content Include="Scripts\Controllers\assets\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\Controllers\assets\css\bootstrap.css" />
+    <Content Include="Scripts\Controllers\assets\css\bootstrap.min.css" />
+    <Content Include="Scripts\Controllers\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Controllers\assets\js\bootstrap.js" />
+    <Content Include="Scripts\Controllers\assets\js\bootstrap.min.js" />
+    <Content Include="Scripts\Controllers\js\registrationCtrl.js" />
+    <Content Include="Scripts\Controllers\css\color.css" />
+    <Content Include="Scripts\Controllers\css\font.css" />
+    <Content Include="Scripts\Controllers\css\layout.css" />
+    <Content Include="Scripts\Controllers\css\reset.css" />
+    <Content Include="Scripts\Controllers\css\style.css" />
+    <Content Include="Views\Home\images\add.jpg" />
+    <Content Include="Views\Home\images\be_partner_bg.jpg" />
+    <Content Include="Views\Home\images\bgPattern\bgPattern.png" />
+    <Content Include="Views\Home\images\bgPattern\header_pattern.png" />
+    <Content Include="Views\Home\images\bgPattern\overlay-pattern.png" />
+    <Content Include="Views\Home\images\call_bg.jpg" />
+    <Content Include="Views\Home\images\co-1.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large1.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large2.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large3.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large4.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-large5.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small1.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small2.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small3.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small4.jpg" />
+    <Content Include="Views\Home\images\gallery\gallery-small5.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Background\gpgf-57.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Background\gpgf-612.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Background\gpgf-81.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Background\LotsOfGames.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-1.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-14.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-20.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-32.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-4.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-41.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-43.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-55.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Large\gpgf-75.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-1.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-14.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-20.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-32.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-4.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-41.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-43.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-55.jpg" />
+    <Content Include="Views\Home\images\GPGF2014\Thumbs\gpgf-75.jpg" />
+    <Content Include="Views\Home\images\GPGFLogo.png" />
+    <Content Include="Views\Home\images\home_bg.jpg" />
+    <Content Include="Views\Home\images\ico\favicon.ico" />
+    <Content Include="Views\Home\images\logo.png" />
+    <Content Include="Views\Home\images\logo_big.png" />
+    <Content Include="Views\Home\images\ms-1.jpg" />
+    <Content Include="Views\Home\images\ms-2.jpg" />
+    <Content Include="Views\Home\images\ms-3.jpg" />
+    <Content Include="Views\Home\images\newslater_bg.jpg" />
+    <Content Include="Views\Home\images\preloader.gif" />
+    <Content Include="Views\Home\images\price_table_bg.jpg" />
+    <Content Include="Views\Home\images\pur_bg.jpg" />
+    <Content Include="Views\Home\images\Sidebar1.png" />
+    <Content Include="Views\Home\images\Sidebar2.png" />
+    <Content Include="Views\Home\images\Sidebar3.png" />
+    <Content Include="Views\Home\images\speaker\1.jpg" />
+    <Content Include="Views\Home\images\speaker\10.jpg" />
+    <Content Include="Views\Home\images\speaker\11.jpg" />
+    <Content Include="Views\Home\images\speaker\12.jpg" />
+    <Content Include="Views\Home\images\speaker\13.jpg" />
+    <Content Include="Views\Home\images\speaker\14.jpg" />
+    <Content Include="Views\Home\images\speaker\2.jpg" />
+    <Content Include="Views\Home\images\speaker\3.jpg" />
+    <Content Include="Views\Home\images\speaker\4.jpg" />
+    <Content Include="Views\Home\images\speaker\5.jpg" />
+    <Content Include="Views\Home\images\speaker\6.jpg" />
+    <Content Include="Views\Home\images\speaker\7.jpg" />
+    <Content Include="Views\Home\images\speaker\8.jpg" />
+    <Content Include="Views\Home\images\speaker\9.jpg" />
+    <Content Include="Scripts\Controllers\js\custom.js" />
+    <Content Include="Scripts\Controllers\js\html5shiv.js" />
+    <Content Include="Scripts\Controllers\js\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\Controllers\js\respond.min.js" />
+    <Content Include="Scripts\Controllers\lib\flat-pricing-table\css\style.css" />
+    <Content Include="Scripts\Controllers\lib\flat-pricing-table\index.html" />
+    <Content Include="Scripts\Controllers\lib\flat-pricing-table\license.txt" />
+    <Content Include="Scripts\Controllers\lib\flat-pricing-table\README.txt" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\basic.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\black.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\caption.png" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\galleriffic-1.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\galleriffic-2.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\galleriffic-3.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\galleriffic-4.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\galleriffic-5.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\jush.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\loader.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\loaderWhite.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\nextPageArrow.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\nextPageArrowWhite.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\prevPageArrow.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\prevPageArrowWhite.gif" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\css\white.css" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\example-1.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\example-2.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\example-3.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\example-4.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\example-5.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\index.html" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\js\jquery-1.3.2.js" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\js\jquery.galleriffic.js" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\js\jquery.history.js" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\js\jquery.opacityrollover.js" />
+    <Content Include="Scripts\Controllers\lib\galleriffic-2.0\js\jush.js" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\filter.htm" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\hash.htm" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\index.htm" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\jquery.js" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\jquery.nav.js" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\jquery.scrollTo.js" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\multiple.htm" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\non-existing.htm" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\top.htm" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\images\dot.png" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\images\firstBG.jpg" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\images\secondBG.jpg" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\images\thirdBG.jpg" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\images\trainers.png" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\index.html" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\scripts\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\scripts\jquery.parallax-1.1.3.js" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\scripts\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\style.css" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\images\bx_loader.gif" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\images\controls.png" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\jquery.bxslider.css" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\jquery.bxslider.js" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\jquery.bxslider.min.js" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\plugins\jquery.fitvids.js" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\examples\index.html" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\examples\style.css" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\jquery.countdown.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\dist\jquery.superslides.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\dist\jquery.superslides.min.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\dist\stylesheets\superslides.css" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\constrained.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\custom-fx.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\custom-pagination.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\fade.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\affinity.jpeg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\cinelli-front.jpeg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\cinelli.jpeg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\home-banner-01.jpg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\people.jpeg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\images\surly.jpeg" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\index.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\javascripts\application.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\javascripts\hammer.min.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\javascripts\jquery.animate-enhanced.min.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\javascripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\multiple.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\play.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\preserved-images.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\simple.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\single.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\examples\touch.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\Gruntfile.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\libs\jquery-loader.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\libs\jquery\jquery.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\libs\qunit\qunit.css" />
+    <Content Include="Scripts\Controllers\lib\superslides\libs\qunit\qunit.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\core.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\core_outro.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\core_prototype.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\css.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\fx.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\image.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\intro.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\outro.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\pagination.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\plugin.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\setup.js" />
+    <Content Include="Scripts\Controllers\lib\superslides\test\superslides.html" />
+    <Content Include="Scripts\Controllers\lib\superslides\test\superslides_test.js" />
+    <Content Include="Scripts\Controllers\js\ui-bootstrap-tpls-0.11.0.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\Controllers\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\Controllers\assets\.DS_Store" />
+    <Content Include="Scripts\Controllers\assets\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\Controllers\assets\css\bootstrap.css.map" />
+    <Content Include="Scripts\Controllers\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\Controllers\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\Controllers\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Home\images\.DS_Store" />
+    <Content Include="Views\Home\images\ico\.DS_Store" />
+    <Content Include="Views\Home\images\logo.psd" />
+    <Content Include="Views\Home\images\logo_big.psd" />
+    <Content Include="Views\Home\images\speaker\.DS_Store" />
+    <Content Include="Scripts\Controllers\js\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\core.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\fixed-width.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\font-awesome.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\icons.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\larger.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\list.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\mixins.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\path.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\spinning.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\stacked.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\less\variables.less" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_core.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_icons.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_larger.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_list.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_mixins.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_path.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_spinning.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_stacked.scss" />
+    <Content Include="Scripts\Controllers\lib\font-awesome-4.1.0\scss\_variables.scss" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\component.json" />
+    <Content Include="Scripts\Controllers\lib\jQuery-One-Page-Nav\README.markdown" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\jquery-parallax\README.markdown" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\bower.json" />
+    <Content Include="Scripts\Controllers\lib\jquery.bxslider\readme.md" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\coffee\jquery.countdown.coffee" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\Makefile" />
+    <Content Include="Scripts\Controllers\lib\rendro-countdown\Readme.md" />
+    <Content Include="Scripts\Controllers\lib\superslides\.DS_Store" />
+    <Content Include="Scripts\Controllers\lib\superslides\.gitignore" />
+    <Content Include="Scripts\Controllers\lib\superslides\.jshintrc" />
+    <Content Include="Scripts\Controllers\lib\superslides\changelog.md" />
+    <Content Include="Scripts\Controllers\lib\superslides\CONTRIBUTING.md" />
+    <Content Include="Scripts\Controllers\lib\superslides\LICENSE-MIT" />
+    <Content Include="Scripts\Controllers\lib\superslides\package.json" />
+    <Content Include="Scripts\Controllers\lib\superslides\README.md" />
+    <Content Include="Scripts\Controllers\lib\superslides\scss\superslides.scss" />
+    <Content Include="Scripts\Controllers\lib\superslides\src\.jshintrc" />
+    <Content Include="Scripts\Controllers\lib\superslides\superslides.jquery.json" />
+    <Content Include="Scripts\Controllers\lib\superslides\test\.jshintrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Controllers\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\Controllers\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\Controllers\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61219</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61219/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

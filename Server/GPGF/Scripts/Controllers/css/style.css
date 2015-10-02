@@ -1,0 +1,46 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Point : One Page Event and Conference HTML Template
+Version:	1.0
+Last change:	07/09/14 
+Assigned to:	TheWebLab
+Primary use:	Event 
+-------------------------------------------------------------------*/
+@import "reset.css";
+@import "layout.css";
+@import "font.css";
+@import "color.css";
+
+  .css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+      font-weight:bolder;
+    font-size:large;
+    color:black;
+  }
+
+  .css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+    font-weight:bolder;
+    font-size:large;
+    color:black;
+  }
+  .css-form input.ng-pristine{
+      border:solid;
+      border-width: 2px;
+      border-color:  #53CFE9; 
+  }
+
+ .darken{
+     opacity: .3;
+ }
+ .lighten{
+     opacity: 1;
+ }
+    /*form.ng-valid payPalForm.imageButton {
+  opacity: 1;  
+}
+  .css-form.ng-invalid payPalForm.imageButton {
+  opacity: .3;
+}*/
+/* @import "debugging.css"; */
