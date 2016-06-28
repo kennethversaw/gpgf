@@ -96,11 +96,11 @@ jQuery(function () {
                 
 
 			});    
-    
+            var myLatLng = { lat: 40.81656, lng: -96.7261975 };
             var myOptions = {
 				zoom: 17,
 				scrollwheel: false,
-				center: new google.maps.LatLng(40.83255, -96.69188),
+				center: new google.maps.LatLng(myLatLng),
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				styles: [
 							{
@@ -197,10 +197,14 @@ jQuery(function () {
 			};
 
 			var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);	
-				
+			var marker = new google.maps.Marker({
+			    position: myLatLng,
+			    map: map,
+			    title: 'Get your game on!!!'
+			});
 			
 			$(function() {
-				var endDate = "March 20, 2015 17:00:00";
+				var endDate = "February 24, 2017 17:00:00";
 
 				$('.countdown.styled').countdown({
 				  date: endDate,
