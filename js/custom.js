@@ -94,9 +94,9 @@ jQuery(function () {
 				$('#spek_action').parallax("50%", 0.1);
 				$('#contact_action').parallax("50%", 0.1);                
                 
-
+				
 			});    
-            var myLatLng = { lat: 40.81656, lng: -96.7261975 };
+            var myLatLng = { lat: 40.787473, lng: -96.717063 };
             var myOptions = {
 				zoom: 17,
 				scrollwheel: false,
