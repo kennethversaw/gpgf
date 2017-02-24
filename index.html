@@ -667,7 +667,7 @@
                                             <li>Daily prices</li>
                                             <li>$15 Friday: 3pm - 1am</li>
                                             <li>$20 Saturday: 9am - 1am</li>
-                                            <li>$10 Sunday: 9am - 5pm</li>
+                                            <li>$10 Sunday: 9am - 4pm</li>
                                             <li></li>
                                             <li></li>
                                         </ul>
@@ -699,19 +699,19 @@
                                         <ul class="features">
                                             <li>
                                                 <form name="form" class="css-form" novalidate>
-                                                    <!-- <strong> Fill in the information below and click Buy Now to receive the special Early Bird Pricing and a <u>free game!</u> <br /><br />You will receive a confirmation email within 24 hours of your confirmed payment.</strong> <br /><hr />-->
-                                                    <strong> Fill in the information below and click Buy Now to buy a weekend badge! You will receive a confirmation email within 24 hours of your confirmed payment.</strong> <br /><hr />
+                                               
+                                                    <strong> Pre-registration for 2017 is closed. You can still purchase daily and weekend badges at the door.</strong> <br /><hr />
+                                                    <!--<strong> Fill in the information below and click Buy Now to buy a weekend badge! You will receive a confirmation email within 24 hours of your confirmed payment.</strong> <br /><hr />-->
                                                     <strong>First Name:</strong>   <br />
-                                                    <input type="text" ng-model="newRegistration.firstName" name="ufirstName" required /><br />
+                                                    <input type="text" ng-model="newRegistration.firstName" name="ufirstName" disabled="disabled" required /><br />
                                                     <br />
                                                     <strong>Last Name:</strong> <br />
 
-                                                    <input type="text" ng-model="newRegistration.lastName" name="ulastName" required /><br />
+                                                    <input type="text" ng-model="newRegistration.lastName" name="ulastName" disabled="disabled" required /><br />
                                                     <br />
                                                     <strong>E-mail:</strong><br />
-                                                    <input type="email" ng-model="newRegistration.email" name="uEmail" required ng-pristine="imagebuttonstyle={'opacity' : '.3'}" /><br /><br />
+                                                    <input type="email" ng-model="newRegistration.email" name="uEmail"  disabled="disabled" required ng-pristine="imagebuttonstyle={'opacity' : '.3'}" /><br /><br />
 
-                                                    <!--<strong>Quantity:</strong><input style="width: 40px;" type="number" ng-model="newRegistration.quantity" name="uQuantity" required /><br />-->
                                                     <hr />
 
                                                 </form>
@@ -721,12 +721,12 @@
                                             <br />
                                             <br />
 
-                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                 <input type="hidden" name="cmd" value="_s-xclick">
                                                 <input type="hidden" name="hosted_button_id" value="RPLQZ77WMSXK6">
-                                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" ng-style="{opacity: imageOpacity}" ng-disabled="form.$invalid || isUnchanged(form.ufirstName) || isUnchanged(form.ulastName)" ng-click="register()">
+                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" ng-style="{opacity: imageOpacity}" ng-disabled="form.$invalid || isUnchanged(form.ufirstName) || isUnchanged(form.ulastName)" ng-click="register()">
                                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </form>
+                                            </form>-->
 
 
                                             <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -757,7 +757,7 @@
                                             <li>$30 for the weekend</li>
                                             <li>Friday: 3pm - 1am</li>
                                             <li>Saturday: 9am - 1am</li>
-                                            <li>Sunday: 9am -5pm</li>
+                                            <li>Sunday: 9am -4pm</li>
                                             <li></li>
                                             <li></li>
                                         </ul>
